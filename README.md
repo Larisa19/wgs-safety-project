@@ -13,7 +13,7 @@ This repository contains a reproducible workflow for analyzing whole genome sequ
 The following bioinformatics tools are required:
 
 - FastQC – quality control of raw sequencing reads
-- Trimmomatic 0.40 – read trimming (`scripts/run_trimming.sh`)
+- Trimmomatic 0.40 – read trimming (`scripts/trimming.sh`)
 - SPAdes – genome assembly
 - Prokka – genome annotation
 
