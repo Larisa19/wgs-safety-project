@@ -23,24 +23,26 @@ Environment: Unix-based system, Java installed for Trimmomatic.
 
 Quality control was performed using FastQC to evaluate sequencing read quality, GC content, and potential adapter contamination.
 
-### Quality Control Summary
-
-FastQC analysis indicated:
+1. From main folder project run:
+   
+fastqc data/raw/SRR2584863_1.fastq.gz data/raw/SRR2584863_2.fastq.gz -o results/fastqc
 
 - High overall read quality, with minor drops at read ends (yellow)
 - GC content mostly within expected range, no signs of contamination
 - Low-level adapter sequences detected
 
+2. Quality Control Summary
 These minor issues can be addressed with trimming. Overall, reads are suitable for downstream analysis for genome assembly, annotation, and safety assessment.
 
 ## Read Trimming
 
 Trimmomatic 0.40 was used to remove low-quality bases and adapter sequences.  
-The trimming script is located at:
 
-`scripts/run_trimming.sh`
+3. Run the following command:
 
-Paired-end reads after trimming are stored in:
+cd ~/Documents/github/wgs-safety-project/scripts/trimming.sh
+
+The paired-end reads after trimming are stored in:
 
 `results/trimmed/`
 
