@@ -4,7 +4,8 @@ This repository contains a reproducible workflow for analyzing whole genome sequ
 
 **##Objectives**
 1. Quality Control con FastQC
-2. 
+2. Read Trimming
+3. Genome Asseambly
 
 ## Project Structure
 
@@ -45,10 +46,14 @@ Trimmomatic 0.40 was used to remove low-quality bases and adapter sequences.
 3. Run the following command:
 cd ~/Documents/github/wgs-safety-project/scripts/trimming.sh
 
-The paired-end reads after trimming are stored in:
-`results/trimmed/`
+The paired-end reads after trimming are stored in: `results/trimmed/`
 
 After trimming, I retained high-quality paired-end reads, which are essential for accurate genome assembly. Reads that lost their pair during trimming were stored separately as unpaired reads and are typically excluded from downstream analysis to avoid introducing noise.
+
+**#Genome Asseambly#**
+
+4. Assembly with SPAdes. The genome assembly step is automated using:'scripts/spades.sh'
+   
 
 ## Notes
 
