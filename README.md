@@ -2,7 +2,8 @@
 
 This repository contains a reproducible workflow for analyzing whole genome sequencing (WGS) data of bacterial strains for research and safety assessment purposes.
 
-**##Objectives**
+## Objectives
+
 1. Quality Control con FastQC
 2. Read Trimming
 3. Genome Asseambly
@@ -50,7 +51,7 @@ The paired-end reads after trimming are stored in: `results/trimmed/`
 
 After trimming, I retained high-quality paired-end reads, which are essential for accurate genome assembly. Reads that lost their pair during trimming were stored separately as unpaired reads and are typically excluded from downstream analysis to avoid introducing noise.
 
-**#Genome Asseambly#**
+## Genome Asseambly
 
 4. Assembly with SPAdes. The genome assembly step is automated using:'scripts/spades.sh'
    
