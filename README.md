@@ -54,7 +54,11 @@ After trimming, I retained high-quality paired-end reads, which are essential fo
 ## Genome Asseambly
 
 4. Assembly with SPAdes. The genome assembly step is automated using:'scripts/spades.sh'
-   
+
+SPAdes produces several output files, but the main one used for downstream analysis is contigs.fasta, which contains the assembled genome sequences. These contigs are then used for annotation and safety-related gene detection.
+
+The contigs.fasta are stored in: `results/spades/`
+
 
 ## Notes
 
