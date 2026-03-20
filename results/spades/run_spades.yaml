@@ -1,0 +1,174 @@
+- STAGE: Before start
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Before_start_N0RW4SW10F48DKKILJQC99FTARR5OJC3
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: before_start
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Read_error_correction_IRP7J1UJ2VA0VP4I2T2HRKXKIU1HI6NH
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: ec_start
+- STAGE: Read error correction
+  args:
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/corrected/configs/config.info
+  config_dir: corrected
+  del_after:
+  - tmp/hammer_4t_13dtb
+  job_uuid: SPAdes_Read_error_correction_1JGA1KZVP909SH8ZB5LA1BTH3OIK42TR
+  mpi_support: false
+  output_files:
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/corrected/corrected.yaml
+  path: /opt/homebrew/Cellar/spades/4.2.0/bin/spades-hammer
+  short_name: ec_runtool
+- STAGE: corrected reads compression
+  args:
+  - /opt/homebrew/Cellar/spades/4.2.0/share/spades/spades_pipeline/scripts/compress_all.py
+  - --input_file
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/corrected/corrected.yaml
+  - --ext_python_modules_home
+  - /opt/homebrew/Cellar/spades/4.2.0/share/spades
+  - --max_threads
+  - '4'
+  - --output_dir
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/corrected
+  - --gzip_output
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_corrected_reads_compression_R74O35T1GR7NYX98P81FWU1DV8EEF7SV
+  mpi_support: false
+  output_files: []
+  path: /opt/homebrew/opt/python@3.14/bin/python3.14
+  short_name: ec_compress
+- STAGE: Read error correction
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Read_error_correction_28KRHM3PEKAT4DPDJ3D0VBT6CNZ9PMKH
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: ec_finish
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_7SLISRLUD91XPQWQP08GIC1ZK2C2XQPF
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_start
+- STAGE: K21
+  args:
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K21/configs/config.info
+  config_dir: K21
+  del_after: []
+  job_uuid: hpcSPAdes_K21_0C4LZ9RGNX1MUMMRXHFZ7ZTYAFFMQ9OO
+  mpi_support: true
+  output_files: []
+  path: /opt/homebrew/Cellar/spades/4.2.0/bin/{spades_core}
+  short_name: k21
+- STAGE: K33
+  args:
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K33/configs/config.info
+  config_dir: K33
+  del_after: []
+  job_uuid: hpcSPAdes_K33_Q24KHDV4DPEGABLT6KMOEFP5NQW609W3
+  mpi_support: true
+  output_files: []
+  path: /opt/homebrew/Cellar/spades/4.2.0/bin/{spades_core}
+  short_name: k33
+- STAGE: K55
+  args:
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K55/configs/config.info
+  config_dir: K55
+  del_after: []
+  job_uuid: hpcSPAdes_K55_ALWYAXBRWL768SJ0OX64QCHAVBZCVN3W
+  mpi_support: true
+  output_files: []
+  path: /opt/homebrew/Cellar/spades/4.2.0/bin/{spades_core}
+  short_name: k55
+- STAGE: K77
+  args:
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/configs/config.info
+  config_dir: K77
+  del_after: []
+  job_uuid: hpcSPAdes_K77_OY8EC6PUUMLIAD075866D9BXFCDHOFAM
+  mpi_support: true
+  output_files: []
+  path: /opt/homebrew/Cellar/spades/4.2.0/bin/{spades_core}
+  short_name: k77
+- STAGE: Copy files
+  args:
+  - /opt/homebrew/Cellar/spades/4.2.0/share/spades/spades_pipeline/scripts/copy_files.py
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/before_rr.fasta
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/before_rr.fasta
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/assembly_graph_after_simplification.gfa
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/assembly_graph_after_simplification.gfa
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/final_contigs.fasta
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/contigs.fasta
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/first_pe_contigs.fasta
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/first_pe_contigs.fasta
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/strain_graph.gfa
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/strain_graph.gfa
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/scaffolds.fasta
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/scaffolds.fasta
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/scaffolds.paths
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/scaffolds.paths
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/assembly_graph_with_scaffolds.gfa
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/assembly_graph_with_scaffolds.gfa
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/assembly_graph.fastg
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/assembly_graph.fastg
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/K77/final_contigs.paths
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/contigs.paths
+  config_dir: ''
+  del_after:
+  - .bin_reads
+  - tmp/spades_tokb_6_m
+  job_uuid: SPAdes_Copy_files_WFRI5O0XY2GMYC8I8B9ETR1HNJ8NUM6C
+  mpi_support: false
+  output_files: []
+  path: /opt/homebrew/opt/python@3.14/bin/python3.14
+  short_name: copy_files
+- STAGE: Assembling
+  args: []
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Assembling_AX5HWQQUV4U0HY5AE73FHWSY9KWE7RN2
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: as_finish
+- STAGE: Breaking scaffolds
+  args:
+  - /opt/homebrew/Cellar/spades/4.2.0/share/spades/spades_pipeline/scripts/breaking_scaffolds_script.py
+  - --result_scaffolds_filename
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/scaffolds.fasta
+  - --misc_dir
+  - /Users/lary/Documents/github/wgs-safety-project/results/spades/misc
+  - --threshold_for_breaking_scaffolds
+  - '3'
+  config_dir: ''
+  del_after: []
+  job_uuid: SPAdes_Breaking_scaffolds_AF7IBBTY4WV2M1DZRMJD1FV2IP53O5LE
+  mpi_support: false
+  output_files: []
+  path: /opt/homebrew/opt/python@3.14/bin/python3.14
+  short_name: bs
+- STAGE: Terminate
+  args: []
+  config_dir: ''
+  del_after:
+  - configs
+  job_uuid: SPAdes_Terminate_4J8KOOKWOAQ78BJ7X6KLHDEN8AXIJIWL
+  mpi_support: false
+  output_files: []
+  path: 'true'
+  short_name: terminate

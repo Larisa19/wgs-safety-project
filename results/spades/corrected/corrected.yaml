@@ -1,0 +1,9 @@
+- "left reads":
+  - "/Users/lary/Documents/github/wgs-safety-project/results/spades/corrected/SRR2584863_1_paired.fastq00.0_0.cor.fastq.gz"
+  "number": !!int "1"
+  "orientation": "fr"
+  "right reads":
+  - "/Users/lary/Documents/github/wgs-safety-project/results/spades/corrected/SRR2584863_2_paired.fastq00.0_0.cor.fastq.gz"
+  "single reads":
+  - "/Users/lary/Documents/github/wgs-safety-project/results/spades/corrected/SRR2584863__unpaired00.0_0.cor.fastq.gz"
+  "type": "paired-end"
