@@ -7,6 +7,9 @@ This repository contains a reproducible workflow for analyzing whole genome sequ
 1. Quality Control con FastQC
 2. Read Trimming
 3. Genome Asseambly
+4. Genome Annotation
+5. Risk Gene Detection (AMR / Virulence)
+6. AMR Summary Results
 
 ## Project Structure
 
@@ -77,6 +80,25 @@ Prokka (Prokaryotic Genome Annotation tool) was used within Galaxy to annotate g
 Galaxy automatically manages all dependencies (BLAST, HMMER, etc.), making the workflow reproducible without local software installation.  
 
 This annotated genome is then used for safety assessment, including detection of antimicrobial resistance (AMR) and virulence genes.
+
+## Risk Gene Detection (AMR / Virulence) with Galaxy
+
+After genome annotation with Prokka, the annotated genome in GenBank file (.gbk) was used in [Galaxy](https://usegalaxy.org/) for detection of antimicrobial resistance (AMR) and virulence genes.
+
+**Input:**
+- `results/prokka/strain_annotation.gbk` (annotated genome)
+
+**Output:**
+- `Galaxy15-[ABRicate on dataset 3 report file].tabular` → identified AMR genes
+
+Results: A single antimicrobial resistance gene, mdf(A), was detected in the genome.
+
+Galaxy performs the analysis on its servers, so no local software installation or large database downloads are required.These results provide essential information for assessing the biosafety of the bacterial strain.
+
+**AMR Summary Results**
+
+One AMR gene, mdf(A), was detected with high identity and full coverage, indicating a reliable match. This gene is associated with multidrug resistance via efflux mechanisms.
+The presence of mdf(A) suggests potential multidrug resistance, which is important for safety assessment, although further evaluation would be needed to determine its impact in the specific strain.
 
 ## Notes
 
