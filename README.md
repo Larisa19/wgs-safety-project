@@ -2,6 +2,30 @@
 
 This repository contains a reproducible workflow for analyzing whole genome sequencing (WGS) data of bacterial strains for research and safety assessment purposes.
 
+## Strain and Sequencing Overview
+
+This project uses *Escherichia coli* K-12 substr. MG1655 as a model organism for strain-level WGS analysis.
+
+### Strain Information
+- Species: *Escherichia coli*
+- Strain: K-12 substr. MG1655
+- Genome: complete genome
+- Accession: NC_000913.3
+- Relevance: Non-pathogenic laboratory strain commonly used in research and biotechnology
+
+### Sequencing Data
+- Data type: Whole Genome Sequencing (WGS)
+- Format: FASTQ (raw reads)
+- Source: NCBI Nucleotide Database ([NC_000913.3](https://www.ncbi.nlm.nih.gov/nuccore/NC_000913.3))
+- Notes: This dataset represents the complete genome of *E. coli* K-12 substr. MG1655. Raw reads are processed through quality control, trimming, assembly, and annotation for downstream analysis.
+
+### Considerations for Analysis
+
+- Quality of raw reads is assessed with FastQC.
+- Genome assembly is performed to reconstruct the complete genome from sequencing reads.
+- Annotation allows identification of coding sequences (CDS) and functional genes.
+- Downstream analysis focuses on gene content, potential virulence factors, and regulatory-relevant features.
+
 ## Objectives
 
 1. Quality Control con FastQC
@@ -83,7 +107,7 @@ This annotated genome is then used for safety assessment, including detection of
 
 ## Risk Gene Detection (AMR / Virulence) with Galaxy
 
-After genome annotation with Prokka, the annotated genome in GenBank file (.gbk) was used in [Galaxy](https://usegalaxy.org/) for detection of antimicrobial resistance (AMR) and virulence genes.
+After genome annotation with Prokka, the annotated genome in GenBank format (.gbk) was used in [Galaxy](https://usegalaxy.org/) for detection of antimicrobial resistance (AMR) and virulence genes.
 
 **Input:**
 - `results/prokka/strain_annotation.gbk` (annotated genome)
@@ -91,7 +115,7 @@ After genome annotation with Prokka, the annotated genome in GenBank file (.gbk)
 **Output:**
 - `Galaxy15-[ABRicate on dataset 3 report file].tabular` → identified AMR genes
 
-Results: A single antimicrobial resistance gene, mdf(A), was detected in the genome.
+**Results:** A single antimicrobial resistance gene, mdf(A), was detected in the genome.
 
 Galaxy performs the analysis on its servers, so no local software installation or large database downloads are required.These results provide essential information for assessing the biosafety of the bacterial strain.
 
