@@ -41,6 +41,10 @@ This project uses *Escherichia coli* K-12 substr. MG1655 as a model organism for
 - `results/` – Analysis outputs (QC, trimmed reads, assembly, annotations)
 - `scripts/` – Scripts used for preprocessing and analysis
 
+### Scripts
+
+All scripts included in this repository are written in **Bash**. This approach simplifies running long or complex command-line bioinformatics workflows, ensures reproducibility, and makes it easier to execute multiple steps sequentially.
+
 ## Requirements
 
 The following bioinformatics tools are required:
