@@ -1,4 +1,4 @@
-# WGS Safety Assessment Project
+# Bacterial WGS — Genome Assembly & Safety Assessment
 
 This repository contains a reproducible workflow for analyzing whole genome sequencing (WGS) data of bacterial strains for research and safety assessment purposes.
 
